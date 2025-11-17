@@ -1,7 +1,7 @@
 name: Build Musicsync JAR
 
 on:
-  workflow_dispatch:   # Permet de lancer manuellement le workflow
+  workflow_dispatch:   
 
 jobs:
   build:
@@ -21,7 +21,7 @@ jobs:
         run: mvn clean package -DskipTests
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4  # 
         with:
           name: musicsync-3.1-jar
           path: package/application/target/musicsync-3.1.jar
